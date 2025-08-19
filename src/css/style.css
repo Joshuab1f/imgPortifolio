@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+header  a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 50px;
+}
+
+section img {
+  width: 40%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.content {
+  width: 50%;
+  padding: 20px;
+}
+
+
+/* Alternando seções */
+
+.Banner {
+  height: 100vh; /* ocupa a tela toda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #111; /* fundo preto */
+  color: #fff;
+}
+
+.Banner h1 {
+  font-size: 5rem; /* bem grande */
+  font-family: 'Montserrat', sans-serif; /* moderna e forte */
+  font-weight: 900;
+  letter-spacing: 6px; /* espaçamento para dar impacto */
+  text-transform: uppercase;
+  color: #fff; /* branco puro */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* leve sombra para dar destaque */
+  margin-bottom: 10px;
+}
+
+.Banner h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #aaa; /* cinza claro para contraste */
+}
+
+
+
+.section1 {
+  flex-direction: row;
+  background: #101413;
+}
+
+.section2 {
+  flex-direction: row-reverse;
+  background: #D6C3A2;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media(max-width: 768px) {
+  section {
+    flex-direction: column !important;
+    text-align: center;
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  section img {
+    width: 80%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
