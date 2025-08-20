@@ -8,6 +8,7 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
+  background: #111;
 }
 
 header {
@@ -31,9 +32,31 @@ header  a {
   font-weight: bold;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: color 0.3s ease;
 }
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ffffff; /* cor da linha */
+  transition: width 0.3s ease;
+}
+
+
+
+header nav a:hover::after {
+  width: 100%;
+}
+
 
 section {
   display: flex;
@@ -58,23 +81,23 @@ section img {
 /* Alternando seções */
 
 .Banner {
-  height: 100vh; /* ocupa a tela toda */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #111; /* fundo preto */
+  background: #111;
   color: #fff;
 }
 
 .Banner h1 {
-  font-size: 5rem; /* bem grande */
-  font-family: 'Montserrat', sans-serif; /* moderna e forte */
+  font-size: 5rem; 
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  letter-spacing: 6px; /* espaçamento para dar impacto */
+  letter-spacing: 6px; 
   text-transform: uppercase;
-  color: #fff; /* branco puro */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* leve sombra para dar destaque */
+  color: #fff; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); 
   margin-bottom: 10px;
 }
 
@@ -82,7 +105,7 @@ section img {
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 3px;
-  color: #aaa; /* cinza claro para contraste */
+  color: #aaa; 
 }
 
 
@@ -90,12 +113,41 @@ section img {
 .section1 {
   flex-direction: row;
   background: #101413;
+  color: #989282;
 }
 
 .section2 {
   flex-direction: row-reverse;
   background: #D6C3A2;
 }
+
+
+.section1 h2, .section2 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.section1 p, .section2 p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.section1, .section2 {
+  opacity: 0;
+  transform: translateY(60px); /* começa deslocado pra baixo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* quando a classe "visible" é adicionada */
+.section1.visible, .section2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* footer */
 
 footer {
   background: #111;

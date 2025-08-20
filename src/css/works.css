@@ -33,32 +33,59 @@ header  a {
   font-weight: bold;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ffffff; /* cor da linha */
+  transition: width 0.3s ease;
+}
+
+
+
+header nav a:hover::after {
+  width: 100%;
 }
 
 /* GALERIA */
 .gallery {
-    column-count: 3; /* número de colunas */
-    column-gap: 15px;
-    padding: 120px 20px 40px; /* espaço pro header */
+    display: grid;
+    grid-template-columns: repeat(2, 300px); 
+    justify-content: center; 
+    gap: 15px;
+    padding: 120px 20px 40px;
+    max-width: 450px; 
+    margin: 0 auto; 
 }
 
 .gallery img {
-    width: 100%;
+    width: 100%; 
+    height: auto; 
     margin-bottom: 15px;
     border-radius: 10px;
     cursor: zoom-in;
-    transition: transform 0.2s ease, opacity 0.6s ease, transform 0.6s ease;
-    opacity: 0; /* inicialmente invisível */
-    transform: translateY(50px); /* deslocada para baixo */
+    transition: transform 0.2s ease, opacity 0.6s ease;
+    opacity: 0; 
+    transform: translateY(50px); 
 }
+
 
 .gallery img:hover {
     transform: scale(1.01);
 }
 
-/* Quando a imagem entrar na tela */
+
 .gallery img.show {
     opacity: 1;
     transform: translateY(0);
@@ -91,7 +118,7 @@ header nav a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3rem;
+    font-size: 1rem;
     color: #fff;
     cursor: pointer;
     user-select: none;

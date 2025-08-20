@@ -39,14 +39,35 @@ header  a {
   font-weight: bold;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ffffff; /* cor da linha */
+  transition: width 0.3s ease;
+}
+
+
+
+header nav a:hover::after {
+  width: 100%;
 }
 /* CONTEÚDO */
 main {
-    flex: 1; /* ocupa todo o espaço disponível */
+    flex: 1; 
     max-width: 900px;
-    margin: 120px auto 0; /* respeita o header fixo */
+    margin: 120px auto 0; 
     padding: 0 20px 40px;
 }
 
@@ -54,7 +75,7 @@ h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     padding-bottom: 5px;
-    /* Removido o verde */
+    
 }
 
 p {
